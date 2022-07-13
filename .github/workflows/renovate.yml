@@ -16,11 +16,11 @@ jobs:
         uses: actions/checkout@master
       - name: Substitute vars
         shell: bash
-        run: sed -i "s/GITHUB_TOKEN/${{ secrets.GITHUB_DEPLOYMENT_PAT }}/g" config.json
+        run: sed -i "s/GITHUB_TOKEN/${{ secrets.TEST_DEPLOYMENT_PAT }}/g" config.json
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v32.107.1
         with:
           configurationFile: config.json
-          token: ${{ secrets.GITHUB_DEPLOYMENT_PAT }}
+          token: ${{ secrets.TEST_DEPLOYMENT_PAT }}
         env:
           LOG_LEVEL: 'debug'
