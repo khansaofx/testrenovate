@@ -1,0 +1,53 @@
+{
+  "groupName ": "all",
+  "branchPrefix": "renovate/reno-",
+  "dryRun": false,
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "labels": [
+    "renovate-dependencies"
+  ],
+  "onboarding": true,
+  "onboardingConfigFileName": ".github/renovate.json",
+  "onboardingBranch": "renovate/reno-cfg",
+  "platform": "github",
+  "hashedBranchLength": 20,
+  "github-actions": {
+    "enabled": false
+  },
+  "docker": {
+    "enabled": false
+  },
+  "extends": [
+      ":enableVulnerabilityAlerts"
+  ],
+  "repositories": [
+	"testvulnerabilities"
+  ],
+  "ignoreDeps": [
+    "EPPlus"
+  ],
+  "hostRules": [
+    {
+      "matchHost": "https://npm.pkg.github.com/",
+      "hostType": "npm",
+      "token": "GITHUB_TOKEN"
+    }
+  ],
+  "includePaths": ["test/*"],
+  "packageRules": [
+    {
+	  "enabled": false,
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "groupName": "NPM: all dependencies",
+      "groupSlug": "all",	  
+    }
+	],
+  "vulnerabilityAlerts": {
+    "enabled": "true"
+  }
+}
