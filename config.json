@@ -21,7 +21,7 @@
     ":enableVulnerabilityAlerts"
   ],
   "repositories": [
-	"@khansaofx/testvulnerabilities"
+	"khansaofx/testvulnerabilities",
   ],
   "ignoreDeps": [
     "EPPlus"
