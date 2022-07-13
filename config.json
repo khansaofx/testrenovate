@@ -18,10 +18,10 @@
     "enabled": false
   },
   "extends": [
-      ":enableVulnerabilityAlerts"
+    ":enableVulnerabilityAlerts"
   ],
   "repositories": [
-	"khansaofx/testvulnerabilities"
+	"@khansaofx/testvulnerabilities"
   ],
   "ignoreDeps": [
     "EPPlus"
