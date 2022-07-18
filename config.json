@@ -11,12 +11,6 @@
   "onboardingBranch": "renovate/reno-cfg",
   "platform": "github",
   "hashedBranchLength": 20,
-  "github-actions": {
-    "enabled": false
-  },
-  "docker": {
-    "enabled": false
-  },
   "repositories": [
 	"khansaofx/testvulnerabilities",
   ],  
