@@ -17,36 +17,20 @@
   "docker": {
     "enabled": false
   },
-  "extends": [
-    ":enableVulnerabilityAlerts"
-  ],
   "repositories": [
 	"khansaofx/testvulnerabilities",
-  ],
-  "ignoreDeps": [
-    "EPPlus"
-  ],
-  "hostRules": [
+  ],  
+  "extends": ["config:base", ":disableRateLimiting"],
+   "packageRules": [
     {
-      "matchHost": "https://npm.pkg.github.com/",
-      "hostType": "npm",
-      "token": "GITHUB_TOKEN"
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["*"],
+      "groupName": "everything",
+      "enabled": false 
     }
   ],
-  "packageRules": [
-    {
-	  "enabled": false,
-      "matchDatasources": [
-        "npm"
-      ],
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "groupName": "NPM: all dependencies",
-      "groupSlug": "all",	  
-    }
-	],
   "vulnerabilityAlerts": {
-    "enabled": "true"
+    "enabled": true
   }
+}
 }
